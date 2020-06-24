@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My example -> Cut Alert</title>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+        <button onclick="msgOk()">
+            Show Ok Alert
+        </button>
+        <br>
+        <button onclick="msgError()"">
+            Show Error Alert
+        </button>
+        <br>
+        <button onclick="msgErrorReload()"">
+            Show Error Alert Reload
+        </button>
+        <script>
+            function msgOk(){
+                        cuteAlert({
+                        type: "success",
+                        title:"Congratulations",
+                        message:"You won the match! :)",
+                        buttonText:"Yaay!!!"
+                        });
+            };
+    
+            function msgError(){
+                        cuteAlert({
+                        type: "error",
+                        title:"Sorry...",
+                        message:"You lost the match!",
+                        buttonText:"OK :-("
+                        });
+            };
+            function msgErrorReload(){
+                        cuteAlert({
+                        type: "error",
+                        title: "Sorry...",
+                        message: "You lost the match!",
+                        buttonText: "OK :-("
+                        }).then(() => {
+                        location.reload();
+                        });
+        };
+        </script>
+    </body>
+</html>
